@@ -64,5 +64,7 @@ for game in games:
     games[game]['kills_by_means'] = dict(sorted(games[game]['kills_by_means'].items(), key=lambda item: -item[1]))
 
 import json
-print(json.dumps(games, indent=4))
+
+with open('report.json', 'w') as file:
+    json.dump(games, file, indent=4)
   
